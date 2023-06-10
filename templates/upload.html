@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:opsz,wght@5..1200,300&display=swap" rel="stylesheet">
+    <style>
+       body {
+          background: rgb(255,255,255);
+       }
+       p {
+          white-space: pre-line;
+          text-align:center;
+          margin: 30px 250px 75px 250px;
+          background: rgba(0,0,0,0.1);
+          border-radius: 5px;
+       }
+       h2 {
+          color:black;
+          white-space: pre-line;
+          font-size:50%;
+          font-family: 'Playfair', serif;
+          text-align:right;
+       }
+       h1 {
+          color:black;
+          white-space: pre-line;
+          font-size:200%;
+          font-family: 'Playfair', serif;
+          text-align:center;
+       }
+       h4 {
+          color:black;
+          white-space: pre-line;
+          font-size:100%;
+          font-family: 'Playfair', serif;
+          text-align:center;
+       }
+       h3 {
+          color:black;
+          white-space: pre-line;
+          margin: 10px 300px 10px 300px;
+          font-size:100%;
+          font-family: 'Playfair', serif;
+          text-align:center;
+       }
+       form {
+           border: none;
+           margin: 30px 300px 75px 300px;
+           background: rgb(255,255,255);
+           border-radius: 5px;
+           border: 5px solid #0072b1;
+         }
+       label {
+           font-size:100%;
+           font-family: 'Playfair', serif;
+       }
+       option {
+           font-size:15px;
+           font-family: 'Playfair', serif;
+       }
+       input {
+           width: 100px;
+           height: 30px;
+           font-family: 'Playfair', serif;
+           font-size: 13px;
+       }
+       .loader {
+         border: 10px solid #f3f3f3;
+         border-top: 10px solid #3498db;
+         border-radius: 50%;
+         width: 60px;
+         height: 60px;
+         animation: spin 2s linear infinite;
+         margin: 50px auto; 
+       }
+      
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h2>
+        *Note that this website is just a prototype for function demonstration, 
+         it only include 2000 randomly selected job descriptions in different areas.
+        </h2>
+        <h1>Resume Matching System</h1>
+        <h4>Upload a File and select percentage of job you want to see</h4>
+        <p class="result-message">{{ output }}</p>
+        <form method="POST" enctype="multipart/form-data", style="text-align: center;", class="upload-form">
+            <input type="file" name="file">
+            <br><br>
+            <label for="number">Percentage:</label>
+            <select id="number" name="number">
+                <option value="0.01">1&#37;</option>
+                <option value="0.05">5&#37;</option>
+                <option value="0.1">10&#37;</option>
+                <option value="0.15">15&#37;</option>
+                <option value="0.2">20&#37;</option>
+                <option value="0.3">30&#37;</option>
+                <option value="0.4">40&#37;</option>
+                <option value="0.5">50&#37;</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit" onclick="showLoader()">
+        </form>
+        
+    </div>
+    
+    <script>
+      function showLoader() {
+        var loaderText = document.createElement('h3');
+        loaderText.textContent = 'Please wait, it takes about 1 minute...';
+        document.body.appendChild(loaderText);
+        var loader = document.createElement('div');
+        loader.className = 'loader';
+        document.body.appendChild(loader);
+    }
+    </script>  
+</body>
+</html>
