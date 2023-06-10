@@ -35,6 +35,14 @@ A final website is devised and deployed to local server as a prototype in this p
 
 
 
+https://github.com/Danielyaoan/Resume-Matching-System/assets/97267439/8dedb65d-8bbc-435f-ad4e-6a8dade30cef
+
+
+
+
+
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
